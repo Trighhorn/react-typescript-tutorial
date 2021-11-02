@@ -1,17 +1,18 @@
-import React from 'react'
+import React from "react";
 
+import InvoiceList from "./InvoiceList";
+import { InvoiceDataType } from '../../types'
 
-import InvoiceList from './InvoiceList'
 
 const App = () => {
-  const data = {
-    customerName: 'Google',
+  const data: InvoiceDataType = {
+    customerName: "Google",
     invoices: [
-      {id: 123, name: 'Dev work', total: '20.00'},
-      {id: 456, name: 'More Dev work', total: '50.00'},
-      {id: 789, name: 'Even more dev work', total: '600.00'},
-    ]
-  }
+      { id: 123, name: "Dev work", total: "20.00", paymentStatus: "paid" },
+      { id: 456, name: "More Dev work", total: "50.00", paymentStatus: "pending" },
+      { id: 789, name: "Even more dev work", total: "600.00", paymentStatus: "late" },
+    ],
+  };
 
   return (
     <div>

@@ -1,14 +1,9 @@
 import React from "react";
+import { IInvoiceListData  } from '../../types'
 
-interface IInvoiceListProps {
-  InvoiceData: {
-    customerName: string;
-    invoices: { id: number; name: string; total: string }[];
-  };
-  logo?: string;
-}
 
-const InvoiceList = (props: IInvoiceListProps) => {
+
+const InvoiceList = (props: IInvoiceListData) => {
   const { customerName, invoices } = props.InvoiceData;
   return (
     <div>
@@ -19,7 +14,7 @@ const InvoiceList = (props: IInvoiceListProps) => {
           return (
             <div key={invoice.id} className="flex justify-between">
               <div>{invoice.name}</div>
-              <div>{invoice.total}</div>
+              <div>{invoice.total} - {invoice.paymentStatus}</div>
             </div>
           );
         })}
