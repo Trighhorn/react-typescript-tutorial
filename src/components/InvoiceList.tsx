@@ -9,11 +9,21 @@ interface IInvoiceListProps {
 }
 
 const InvoiceList = (props: IInvoiceListProps) => {
-    const {customerName, invoices} = props.InvoiceData
+  const { customerName, invoices } = props.InvoiceData;
   return (
     <div>
       <h1>{customerName}</h1>
-      <h1>{invoices}</h1>
+      <hr />
+      <div>
+        {invoices.map((invoice) => {
+          return (
+            <div key={invoice.id} className="flex justify-between">
+              <div>{invoice.name}</div>
+              <div>{invoice.total}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
